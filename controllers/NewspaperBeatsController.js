@@ -1,0 +1,1 @@
+newspaperBeats.controller('newspaperCtrl', []);
