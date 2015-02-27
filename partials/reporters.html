@@ -19,7 +19,11 @@
     <button class="btn btn-default">Add Reporter</button>
   </form>
 
-  <ul class="list-unstyled">
-    <li ng-repeat="reporter in filtered = (reporters | filter: query)">{{ reporter.name }}</li>
-  </ul>
+  <div ng-repeat="reporter in filtered = (reporters | filter: query)">
+    <p class="lead reporters">{{ reporter.name }} <button class="btn btn-default btn-xs" ng-click="showDetails = ! showDetails">Show Details</button></p>
+      <div class="reporter-details" ng-show="showDetails">
+        <p><strong>Number of years reporter has been with the newspaper:</strong>  <em>{{ reporter.employmentYears }}</em></p>
+        <p><strong>Date of Birth:</strong>  <em>{{ reporter.dateOfBirth }}</em></p>
+     </div>
+  </div>
 </div>
