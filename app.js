@@ -6,6 +6,12 @@ newspaperBeats.config(function($stateProvider) {
     templateUrl: "partials/home.html"
   });
 
+  $stateProvider.state('beats', {
+    url: "/beats",
+    templateUrl: "partials/beats.html",
+    controller: "newspaperBeatsCtrl"
+  });
+
   $stateProvider.state('reporters', {
     url: "/reporters",
     templateUrl: "partials/reporters.html",
