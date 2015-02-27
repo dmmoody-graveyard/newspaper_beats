@@ -7,4 +7,4 @@ newspaperBeats.factory('BeatsFactory', function BeatsFactory() {
   };
 
   return factory;
-})
+});
