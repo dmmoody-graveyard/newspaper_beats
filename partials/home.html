@@ -1,12 +1,29 @@
 <h1 class="page-header">Newspaper Beats</h1>
 
-<h3>Beats List</h3>
+<div ng-controller="newspaperBeatsCtrl">
+  <h3>Beats List</h3>
 
-<form class="form-inline" ng-submit="BeatsFactory.addNewBeat()" role="form">
-  <input type="text" class="form-control" placeholder='Add a New Beat' ng-model="BeatsFactory.beatName">
-  <button class="btn btn-default">New Beat</button>
-</form>
+  <form class="form-inline" ng-submit="BeatsFactory.addNewBeat()" role="form">
+    <input type="text" class="form-control" placeholder='Add a New Beat' ng-model="BeatsFactory.beatName">
+    <button class="btn btn-default">New Beat</button>
+  </form>
 
-<ul class="list-unstyled">
-  <li ng-repeat="beat in beats" class="lead">{{ beat.name }}</li>
-</ul>
+  <ul class="list-unstyled">
+    <li ng-repeat="beat in beats" class="lead">{{ beat.name }}</li>
+  </ul>
+</div>
+
+<div ng-controller="reportersCtrl">
+  <h3>Reporter List</h3>
+
+  <form class="form-inline" ng-submit="ReportersFactory.addNewReporter()" role="form">
+    <input type="text" class="form-control" placeholder='Add a New Reporter' ng-model="ReportersFactory.reporterName">
+    <input type="text" class="form-control" placeholder="Add Years of Employment" ng-model="ReportersFactory.reporterYears">
+    <input type="text" class="form-control" placeholder="Add Reporters Birth Date" ng-model="ReportersFactory.reporterBirthDate">
+    <button class="btn btn-default">New Reporter</button>
+  </form>
+
+  <ul class="list-unstyled">
+    <li ng-repeat="reporter in reporters" class="lead">{{ reporter.name }}</li>
+  </ul>
+</div>
