@@ -5,4 +5,10 @@ newspaperBeats.config(function($stateProvider) {
     url: "",
     templateUrl: "partials/home.html"
   });
+
+  $stateProvider.state('reporters', {
+    url: "/reporters",
+    templateUrl: "partials/reporters.html",
+    controller: "ReportersCtrl"
+  });
 });

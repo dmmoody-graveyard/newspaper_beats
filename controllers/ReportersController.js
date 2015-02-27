@@ -1,4 +1,4 @@
-newspaperBeats.controller('reportersCtrl', function reportersCtrl($scope, ReportersFactory) {
+newspaperBeats.controller('ReportersCtrl', function ReportersCtrl($scope, ReportersFactory) {
   $scope.reporters = ReportersFactory.reporters;
   $scope.ReportersFactory = ReportersFactory;
 });
