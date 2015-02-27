@@ -1,7 +1,4 @@
-newspaperBeats.controller('newspaperBeatsCtrl', function newspaperBeatsCtrl($scope) {
-  $scope.beats = [
-    { name: 'Restaurant Beat' },
-    { name: 'Crime Beat' },
-    { name: 'Local Events Beat' }
-  ];
+newspaperBeats.controller('newspaperBeatsCtrl', function newspaperBeatsCtrl($scope, BeatsFactory) {
+  $scope.beats = BeatsFactory.beats;
+  $scope.BeatsFactory = BeatsFactory;
 });
