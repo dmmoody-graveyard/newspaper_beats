@@ -14,12 +14,17 @@
 
     <form class="form-inline col-xs-6" ng-submit="BeatsFactory.addNewBeat()" role="form">
       <input type="text" class="form-control" placeholder='Add a New Beat' ng-model="BeatsFactory.beatName">
+      <ul class="list-unstyled" ng-controller="ReportersCtrl">
+        <li ng-repeat="reporter in reporters"><input type="checkbox" ng-model="BeatsFactory.reportersAssigned[reporter.name]">  {{ reporter.name }}</li>
+      </ul>
       <button class="btn btn-default">Add Beat</button>
     </form>
   </div>
   <br>
   <div>
     <ul class="list-unstyled">
-      <li ng-repeat="beat in filtered = (beats | filter: query)">{{ beat.name }}</li>
+      <li ng-repeat="beat in filtered = (beats | filter: query)">{{ beat.name }}
+
+      </li>
     </ul>
   </div>

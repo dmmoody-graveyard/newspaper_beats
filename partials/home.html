@@ -16,7 +16,10 @@
   <br>
   <div>
     <ul class="list-unstyled">
-      <li ng-repeat="beat in filtered = (beats | filter: query)">{{ beat.name }}</li>
+      <li ng-repeat="beat in filtered = (beats | filter: query)"><h4>{{ beat.name }}</h4> 
+        <ul>
+           <li class="lead" ng-repeat="(key, value) in beat.reporters">{{key}}</li>
+         </ul>
     </ul>
   </div>
 </div>
