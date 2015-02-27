@@ -2,6 +2,11 @@
 
 <h3>Beats List</h3>
 
+<form class="form-inline" ng-submit="BeatsFactory.addNewBeat()" role="form">
+  <input type="text" class="form-control" placeholder='Add a New Beat' ng-model="BeatsFactory.beatName">
+  <button class="btn btn-default">New Beat</button>
+</form>
+
 <ul class="list-unstyled">
   <li ng-repeat="beat in beats" class="lead">{{ beat.name }}</li>
 </ul>
