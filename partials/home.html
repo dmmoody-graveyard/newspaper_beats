@@ -4,22 +4,20 @@
   <li role="presentation"><a ui-sref="beats">Beats</a></li>
   <li role="presentation"><a ui-sref="reporters">Reporters</a></li>
 </ul>
+<br>
+<br>
+<div ng-controller="newspaperBeatsCtrl" class='col-xs-5'>
+  <form role="form">
+    <input type="text" ng-model='query' class="form-control" id='beats-name' placeholder="Search Beats">
+  </form>
 
-<div ng-controller="newspaperBeatsCtrl">
   <h3>Beats List</h3>
 
-  <div>
-    <form class="form-inline col-xs-12" role="form">
-      <input type="text" ng-model='query' class="form-control" id='beats-name' placeholder="Search Beats">
-    </form>
-  </div>
-  <br>
-  <div>
-    <ul class="list-unstyled">
-      <li ng-repeat="beat in filtered = (beats | filter: query)"><h4>{{ beat.name }}</h4> 
-        <ul>
-           <li class="lead" ng-repeat="(key, value) in beat.reporters">{{key}}</li>
-         </ul>
-    </ul>
-  </div>
+  <ul class="list-unstyled">
+    <li ng-repeat="beat in filtered = (beats | filter: query)"><h4>{{ beat.name }}</h4> 
+      <ul>
+         <li class="lead" ng-repeat="(key, value) in beat.reporters">{{key}}</li>
+       </ul>
+    </li>
+  </ul>
 </div>

@@ -4,27 +4,28 @@
   <li role="presentation" class="active"><a ui-sref="beats">Beats</a></li>
   <li role="presentation"><a ui-sref="reporters">Reporters</a></li>
 </ul>
+<br>
+<br>
+<div class="col-xs-5">
+  <form role="form">
+    <input type="text" ng-model='query' class="form-control" id='beats-name' placeholder="Search Beats">
+  </form>
 
-<h3>Beats List</h3>
-
-  <div>
-    <form class="form-inline col-xs-6" role="form">
-      <input type="text" ng-model='query' class="form-control" id='beats-name' placeholder="Search Beats">
-    </form>
-
-    <form class="form-inline col-xs-6" ng-submit="BeatsFactory.addNewBeat()" role="form">
-      <input type="text" class="form-control" placeholder='Add a New Beat' ng-model="BeatsFactory.beatName">
-      <ul class="list-unstyled" ng-controller="ReportersCtrl">
-        <li ng-repeat="reporter in reporters"><input type="checkbox" ng-model="BeatsFactory.reportersAssigned[reporter.name]">  {{ reporter.name }}</li>
-      </ul>
-      <button class="btn btn-default">Add Beat</button>
-    </form>
-  </div>
-  <br>
+  <h3>Beats List</h3>
   <div>
     <ul class="list-unstyled">
-      <li ng-repeat="beat in filtered = (beats | filter: query)">{{ beat.name }}
-
-      </li>
+      <li class="lead" ng-repeat="beat in filtered = (beats | filter: query)">{{ beat.name }}</li>
     </ul>
   </div>
+</div>
+
+<div class="col-xs-6 pull-right jumbotron">
+  <h3>Add a New Beat</h3>
+  <form class="form-inline col-xs-6" ng-submit="BeatsFactory.addNewBeat()" role="form">
+  <input type="text" class="form-control" placeholder='Add a New Beat' ng-model="BeatsFactory.beatName" required>
+  <ul class="list-unstyled" ng-controller="ReportersCtrl">
+    <li ng-repeat="reporter in reporters"><input class="checkbox form-control" type="checkbox" ng-model="BeatsFactory.reportersAssigned[reporter.name]">  {{ reporter.name }}</li>
+  </ul>
+  <button class="btn btn-default">Add Beat</button>
+</form>
+</div>

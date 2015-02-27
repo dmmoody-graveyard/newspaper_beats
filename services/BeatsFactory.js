@@ -3,7 +3,6 @@ newspaperBeats.factory('BeatsFactory', function BeatsFactory() {
   factory.beats = [];
   factory.addNewBeat = function() {
     factory.beats.push({ name: factory.beatName, reporters: factory.reportersAssigned });
-    debugger;
     factory.beatName = null;
     factory.reportersAssigned = null;
   };
